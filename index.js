@@ -61,9 +61,9 @@ function createIntern(){[
 
 // function for writeFile
 function fileCreation(){
-const contentHTML = pageTemplate(data);
+const contentTeam = pageTemplate(data);
 
-    fs.writeFile('myTeam.html', contentHTML,
+    fs.writeFile('myTeam.html', contentTeam,
     (err) => err ? console.log(err) : console.log("myTeam.html file successfully created")
     );
 
