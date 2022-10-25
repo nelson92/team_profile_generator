@@ -1,4 +1,5 @@
-const newEngineer = new Engineer ("Milton", "123", "none@noemail.com")         
+const Engineer = require('../lib/Engineer')
+const newEngineer = new Engineer ("")         
 // not sure wha tto do with these parameters   
 
 describe ("Engineer Class", () => {

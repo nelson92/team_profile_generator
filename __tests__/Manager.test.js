@@ -1,4 +1,5 @@
-const newManager = new Manager ("Milton", "123", "none@noemail.com")   
+const Manager = require('../lib/Manager')
+const newManager = new Manager ("")   
   // not sure wha tto do with these parameters   
 
 describe ("Manager Class", () => {

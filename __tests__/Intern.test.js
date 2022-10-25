@@ -1,5 +1,6 @@
-const newIntern = new Intern ("Milton", "123", "none@noemail.com")   
-  // not sure wha tto do with these parameters   
+const Intern = require('../lib/Intern')
+const newIntern = new Intern ("")   
+  // not sure what to do with these parameters   
 
 describe ("Intern Class", () => {
     describe("initialization", () => {
