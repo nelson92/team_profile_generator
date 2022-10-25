@@ -1,4 +1,11 @@
 // set up variable to generate team 
+
+function pageTemplate(data){
+// this function is similar to generateMarkdown
+    return `${data.employee}`
+}
+
+// section below was suggested by tutor
 const buildTeam = team => {
     const buildManager = (manager) => {
         return ``
@@ -14,4 +21,6 @@ const buildTeam = team => {
     }
     // and so on for reach team members
 
-}
+};
+
+module.exports = pageTemplate;

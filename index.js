@@ -33,9 +33,40 @@ inquirer
     
 ])
 .then((data) => {
-    const contentHTML = pageTemplate(data);
+    if (data.employee === 'Engineer'){
+        createEngineer();
+    }
+    if (data.employee === 'Intern'){
+        createIntern();
+    }
+});
+
+function createEngineer(){[
+    {
+    type: 'input',
+    message: 'Please enter your GitHub username',
+    name: 'github'
+    }
+    // do these need to be a callback functions?
+]}
+
+function createIntern(){[
+        {
+        type: 'input',
+        message: 'Please enter the name of the school you are attending',
+        name: 'school'
+        }
+    // prompts for intern
+]}
+
+// function for writeFile
+function fileCreation(){
+const contentHTML = pageTemplate(data);
 
     fs.writeFile('myTeam.html', contentHTML,
     (err) => err ? console.log(err) : console.log("myTeam.html file successfully created")
     );
-});
+
+};
+
+fileCreation()
