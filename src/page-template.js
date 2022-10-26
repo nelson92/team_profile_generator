@@ -1,29 +1,49 @@
-const contentTeam = require("../src/page-template.js")
+// const contentTeam = require("../src/page-template.js")
 // set up variable to generate team 
 
 // function pageTemplate(data){
 // // this function is similar to generateMarkdown
 //     return `${data.employee}`
 // }
-
-// section below was suggested by tutor
-const buildTeam = team => {
-    const buildManager = (manager) => {
-        return `${manager.name}`
-        // build cards in HTML
+// const contentTeam
+const contentTeam = team => {
+    const buildManager = (data) => {
+        return `<div> <hi>${data.name}</hi>
+        <h2>${data.getRole()}</h2>
+        </div>
+        <div>
+        <ul> 
+        <p>${data.id}</p>
+        <p>${data.email}</p>
+        <p>${data.getOffice()}
+        </ul>
+        </div>`
     }
-    const buildEngineer= (engineer) => {
-        return `${engineer.name}`
-        // build cards in HTML
+    const buildEngineer= (data) => {
+        return `<div> <hi>${data.name}</hi>
+        <h2>${data.getRole()}</h2>
+        </div>
+        <div>
+        <ul> 
+        <p>${data.id}</p>
+        <p>${data.email}</p>
+        <p>${data.getGithub()}
+        </ul>
+        </div>`
+    };
+    const buildIntern = (data) => {
+        return `<div> <hi>${data.name}</hi>
+        <h2>${data.getRole()}</h2>
+        </div>
+        <div>
+        <ul> 
+        <p>${data.id}</p>
+        <p>${data.email}</p>
+        <p>${data.getSchool()}
+        </ul>
+        </div>`
     }
-    const buildIntern = (intern) => {
-        return `${intern.name}`
-        // build cards in HTML
-    }
-    // and so on for reach team members
 
 };
 
-module.exports = contentTeam => [
-    // html here, with back ticks
-];
+module.exports = contentTeam 

@@ -2,6 +2,7 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const pageTemplate = require('./src/page-template.js');
 
+
 inquirer
     .prompt([
     {
@@ -47,8 +48,8 @@ function createEngineer(){[
     message: 'Please enter your GitHub username',
     name: 'github'
     }
-    // do these need to be a callback functions?
-]}
+    
+]};
 
 function createIntern(){[
         {
@@ -56,8 +57,8 @@ function createIntern(){[
         message: 'Please enter the name of the school you are attending',
         name: 'school'
         }
-    // prompts for intern
-]}
+    
+]};
 
 // function for writeFile
 function fileCreation(){
@@ -69,4 +70,4 @@ const contentTeam = pageTemplate(data);
 
 };
 
-fileCreation()
+fileCreation();

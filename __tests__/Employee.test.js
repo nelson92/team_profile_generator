@@ -1,4 +1,4 @@
-const Employee = require('../lib/Employee')
+const Employee = require('../lib/Employee');
 const newEmployee = new Employee ("Milton", "123", "none@noemail.com")         
 
 describe ("Employee Class", () => {
