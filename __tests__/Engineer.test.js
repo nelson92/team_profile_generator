@@ -13,12 +13,12 @@ describe ("Engineer Class", () => {
     })
 describe("getGithub method", () => {
     it("should return the employee GitHub username", () => {
-        expect(newEmployee.getGithub().toBe("Milton"));
+        expect(newEmployee.getGithub()).toBe("Milton");
     })
     })
 describe("getRole method", () => {
     it("should return the role of the employee", () => {
-        expect(newEngineer.getRole().toBe("Engineer"));
+        expect(newEngineer.getRole()).toBe("Engineer");
     })
 })
 

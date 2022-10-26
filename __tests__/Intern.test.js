@@ -13,12 +13,12 @@ describe ("Intern Class", () => {
     })
 describe("getSchool method", () => {
     it("should return the employee school they are attending", () => {
-        expect(getSchool().toBe("Milton"));
+        expect(getSchool()).toBe("Milton");
     })
     })
 describe("getRole method", () => {
     it("should return the role of the employee", () => {
-        expect(newIntern.getRole().toBe("Intern"));
+        expect(newIntern.getRole()).toBe("Intern");
     })
 })
 });

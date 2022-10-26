@@ -13,7 +13,7 @@ describe ("Manager Class", () => {
     })
 describe("getRole method", () => {
     it("should return the role of the employee", () => {
-        expect(newIntern.getRole().toBe("Manager"));
+        expect(newIntern.getRole()).toBe("Manager");
     })
 })
 });
