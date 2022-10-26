@@ -40,6 +40,8 @@ inquirer
     if (data.employee === 'Intern'){
         createIntern();
     }
+
+    fileCreation(data);
 });
 
 function createEngineer(){[
@@ -61,13 +63,15 @@ function createIntern(){[
 ]};
 
 // function for writeFile
-function fileCreation(){
-const contentTeam = pageTemplate(data);
+function fileCreation(data){
+const contentTeam = pageTemplate.buildManager(data);
+pageTemplate.buildEngineer(data)
+pageTemplate.buildIntern(data)
 
     fs.writeFile('myTeam.html', contentTeam,
     (err) => err ? console.log(err) : console.log("myTeam.html file successfully created")
     );
-
+  
 };
 
-fileCreation();
+

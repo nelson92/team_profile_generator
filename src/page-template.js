@@ -6,8 +6,10 @@
 //     return `${data.employee}`
 // }
 // const contentTeam
-const contentTeam = team => {
-    const buildManager = (data) => {
+const contentTeam = {
+
+
+    buildManager: (data) => {
         return `<div> <hi>${data.name}</hi>
         <h2>${data.getRole()}</h2>
         </div>
@@ -18,8 +20,8 @@ const contentTeam = team => {
         <p>${data.getOffice()}
         </ul>
         </div>`
-    }
-    const buildEngineer= (data) => {
+    },
+    buildEngineer: (data) => {
         return `<div> <hi>${data.name}</hi>
         <h2>${data.getRole()}</h2>
         </div>
@@ -30,8 +32,8 @@ const contentTeam = team => {
         <p>${data.getGithub()}
         </ul>
         </div>`
-    };
-    const buildIntern = (data) => {
+    },
+    buildIntern: (data) => {
         return `<div> <hi>${data.name}</hi>
         <h2>${data.getRole()}</h2>
         </div>
