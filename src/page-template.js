@@ -10,40 +10,34 @@ const contentTeam = {
 
 
     buildManager: (data) => {
-        return `<div> <hi>${data.name}</hi>
-        <h2>${data.getRole()}</h2>
+        return `<div> <hi>${data.manager}</hi>
         </div>
         <div>
-        <ul> 
         <p>${data.id}</p>
         <p>${data.email}</p>
-        <p>${data.getOffice()}
-        </ul>
-        </div>`
+        </div>`;
+        // <h2>${data.getRole()}</h2>
+        // <p>${data.getOffice()}</p>
     },
     buildEngineer: (data) => {
-        return `<div> <hi>${data.name}</hi>
-        <h2>${data.getRole()}</h2>
+        return `<div> <hi>${data.manager}</hi>
         </div>
         <div>
-        <ul> 
         <p>${data.id}</p>
         <p>${data.email}</p>
-        <p>${data.getGithub()}
-        </ul>
         </div>`
+        // <h2>${data.getRole()}</h2>
+        //  <p>${data.getGithub()}
     },
     buildIntern: (data) => {
-        return `<div> <hi>${data.name}</hi>
-        <h2>${data.getRole()}</h2>
+        return `<div> <hi>${data.manager}</hi>
         </div>
         <div>
-        <ul> 
         <p>${data.id}</p>
         <p>${data.email}</p>
-        <p>${data.getSchool()}
-        </ul>
         </div>`
+        // <h2>${data.getRole()}</h2>
+        // <p>${data.getSchool()}
     }
 
 };
