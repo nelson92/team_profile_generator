@@ -4,10 +4,11 @@ const Manager = require('../lib/Manager')
 describe ("Manager Class", () => {
     describe("initialization", () => {
         it("should return the data passed to the constructor", () => {
-            const newManager = new Manager ("")   
-           expect(newManager.name).toBe("Milton");
-           expect(newManager.id).toBe("123");
-           expect(newManager.email).tobe("none@noemail.com");
+            const newManager = new Manager("Milton",123, "none@noemail.com", 5)   
+           expect(newManager.name).toEqual("Milton");
+           expect(newManager.id).toEqual(123);
+           expect(newManager.email).toEqual("none@noemail.com");
+           expect(newManager.officeNumber).toEqual(5);
         // don't know if i need to keep these 'expects' above
         });   
     })

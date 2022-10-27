@@ -4,10 +4,11 @@ const Engineer = require('../lib/Engineer')
 describe ("Engineer Class", () => {
     describe("initialization", () => {
         it("should return the data passed to the constructor", () => {
-            const newEngineer = new Engineer ("")   
-           expect(newEngineer.name).toBe("Milton");
-           expect(newEngineer.id).toBe("123");
-           expect(newEngineer.email).tobe("none@noemail.com");
+            const newEngineer = new Engineer("Milton",123, "none@noemail.com", "nelson92")   
+           expect(newEngineer.name).toEqual("Milton");
+           expect(newEngineer.id).toEqual(123);
+           expect(newEngineer.email).toEqual("none@noemail.com");
+           expect(newEngineer.github).toEqual("nelson92");
            // don't know if i need to keep these 'expects' above
         });   
     })

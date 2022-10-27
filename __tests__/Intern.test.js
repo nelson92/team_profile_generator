@@ -1,15 +1,16 @@
 const Intern = require('../lib/Intern')
  
-  // not sure what to do with these parameters   
+    
 
 describe ("Intern Class", () => {
     describe("initialization", () => {
         it("should return the data passed to the constructor", () => {
-        const newIntern = new Intern ("")
+        const newIntern = new Intern ("Milton", 123, "none@noemail.com", "State University")
            expect(newIntern.name).toBe("Milton");
-           expect(newIntern.id).toBe("123");
-           expect(newIntern.email).tobe("none@noemail.com");
-           // don't know if i need to keep these 'expects' above
+           expect(newIntern.id).toBe(123);
+           expect(newIntern.email).toBe("none@noemail.com");
+           expect(newIntern.school).toBe("State University")
+          
         });   
     })
 // describe("getSchool method", () => {
