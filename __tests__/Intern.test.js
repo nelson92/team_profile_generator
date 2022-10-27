@@ -1,7 +1,6 @@
 const Intern = require('../lib/Intern')
  
-    
-
+ 
 describe ("Intern Class", () => {
     describe("initialization", () => {
         it("should return the data passed to the constructor", () => {
@@ -10,13 +9,12 @@ describe ("Intern Class", () => {
            expect(newIntern.id).toBe(123);
            expect(newIntern.email).toBe("none@noemail.com");
            expect(newIntern.school).toBe("State University")
-          
-        });   
+         });   
     })
 // describe("getSchool method", () => {
 //     it("should return the employee school they are attending", () => {
 //         const newIntern = new Intern ("")
-//         expect(newIntern.getSchool()).toBe("Milton");
+//         expect(newIntern.getSchool()).toBe("State University");
 //     })
 //     })
 // describe("getRole method", () => {

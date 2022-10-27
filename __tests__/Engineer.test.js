@@ -9,7 +9,6 @@ describe ("Engineer Class", () => {
            expect(newEngineer.id).toEqual(123);
            expect(newEngineer.email).toEqual("none@noemail.com");
            expect(newEngineer.github).toEqual("nelson92");
-           // don't know if i need to keep these 'expects' above
         });   
     })
 // describe("getGithub method", () => {

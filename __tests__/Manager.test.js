@@ -1,6 +1,5 @@
 const Manager = require('../lib/Manager')
  
-
 describe ("Manager Class", () => {
     describe("initialization", () => {
         it("should return the data passed to the constructor", () => {
@@ -9,7 +8,6 @@ describe ("Manager Class", () => {
            expect(newManager.id).toEqual(123);
            expect(newManager.email).toEqual("none@noemail.com");
            expect(newManager.officeNumber).toEqual(5);
-        // don't know if i need to keep these 'expects' above
         });   
     })
 // describe("getRole method", () => {
