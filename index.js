@@ -8,7 +8,7 @@ const Employee = require('./lib/Employee');
 
 const teamMembers = [];
 
-
+function appMenu(){
 function addManager() {
     inquirer
     .prompt([
@@ -36,7 +36,7 @@ function addManager() {
 .then((data) => {
     const newManager = new Manager(data.name, data.id, data.email, data.office)
     teamMembers.push(newManager)
-
+    
 })
 };
 
@@ -60,7 +60,7 @@ function chooseMember(){
         createIntern();
     }
     if (data.employee === 'none'){
-        
+        fileCreation(data);
     }    
     
 })
@@ -93,8 +93,8 @@ function createEngineer () {
     .then((data) => {
         const newEngineer = new Engineer(data.name, data.id, data.email, data.github)
         teamMembers.push(newEngineer)
-    }   
-    )
+    })
+    chooseMember()
 };
 
 function createIntern(){
@@ -125,10 +125,9 @@ function createIntern(){
         .then((data) => {
             const newIntern = new Intern(data.name, data.id, data.email, data.school)
             teamMembers.push(newIntern)
-
-        } ) 
-        fileCreation(data);
-
+            chooseMember()
+        }) 
+       
 };
 
 
@@ -146,4 +145,6 @@ pageTemplate.buildIntern(teamMembers)
 
 
 addManager()
-chooseMember()
+};
+
+appMenu()
