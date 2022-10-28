@@ -4,6 +4,7 @@ const pageTemplate = require('./src/page-template.js');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
+const Employee = require('./lib/Employee');
 
 const teamMembers = [];
 
@@ -30,19 +31,28 @@ function addManager() {
         type: 'input',
         message: 'Please enter the office number of the manager',
         name: 'office'
-    },
+    }
+])  
+.then((data) => {
+    const newManager = new Manager(data.name, data.id, data.email, data.office)
+    teamMembers.push(newManager)
+
+})
+};
+
+function chooseMember(){
+    inquirer
+    .prompt ([
     {
         type: 'list',
         message: 'Choose a member for the team',
         choices: ['Engineer', 'Intern', 'none'],
         name: 'employee'
-    },
-    
-])
+    }
+])  
 .then((data) => {
-    const newManager = new Manager(data.name, data.id, data.email, data.office)
-    teamMembers.push(newManager)
-
+    const employee = new Employee(data.name, data.id, data.email, data.github)
+    teamMembers.push(employee)
     if (data.employee === 'Engineer'){
         createEngineer();
     }
@@ -50,9 +60,8 @@ function addManager() {
         createIntern();
     }
     if (data.employee === 'none'){
-        fileCreation(data);
-    }
-
+        
+    }    
     
 })
 };
@@ -118,8 +127,10 @@ function createIntern(){
             teamMembers.push(newIntern)
 
         } ) 
-    
+        fileCreation(data);
+
 };
+
 
 // function for writeFile
 function fileCreation(teamMembers){
@@ -135,3 +146,4 @@ pageTemplate.buildIntern(teamMembers)
 
 
 addManager()
+chooseMember()
