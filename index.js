@@ -36,7 +36,7 @@ function addManager() {
 .then((data) => {
     const newManager = new Manager(data.name, data.id, data.email, data.office)
     teamMembers.push(newManager)
-    
+    chooseMember()
 })
 };
 
@@ -93,8 +93,9 @@ function createEngineer () {
     .then((data) => {
         const newEngineer = new Engineer(data.name, data.id, data.email, data.github)
         teamMembers.push(newEngineer)
+        chooseMember()
     })
-    chooseMember()
+   
 };
 
 function createIntern(){
@@ -102,17 +103,17 @@ function createIntern(){
         .prompt ([
     {
         type: 'input',
-        message: 'Please enter the name of the engineer',
+        message: 'Please enter the name of the intern',
         name: 'name'
     },
     {
         type: 'input',
-        message: 'Please enter the ID of the engineer',
+        message: 'Please enter the ID of the intern',
         name: 'ID'
     },
     {
         type: 'input',
-        message: 'Please enter the email of the engineer',
+        message: 'Please enter the email of the intern',
         name: 'email'
     },
         {
