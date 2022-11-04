@@ -20,7 +20,7 @@ function addManager() {
     {
         type: 'input',
         message: 'Please enter the ID of the manager',
-        name: 'ID'
+        name: 'id'
     },
     {
         type: 'input',
@@ -63,7 +63,7 @@ function chooseMember(){
         fileCreation(data);
     }    
     
-})
+});
 };
 
 function createEngineer () {
@@ -77,7 +77,7 @@ function createEngineer () {
         {
             type: 'input',
             message: 'Please enter the ID of the engineer',
-            name: 'ID'
+            name: 'id'
         },
         {
             type: 'input',
@@ -109,7 +109,7 @@ function createIntern(){
     {
         type: 'input',
         message: 'Please enter the ID of the intern',
-        name: 'ID'
+        name: 'id'
     },
     {
         type: 'input',
@@ -144,8 +144,6 @@ pageTemplate.buildIntern(teamMembers)
   
 };
 
-
-addManager()
-};
+addManager() };
 
 appMenu()
