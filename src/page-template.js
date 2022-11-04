@@ -10,11 +10,11 @@ const contentTeam = {
 
 
     buildManager: (data) => {
-        return `<div> <hi>${data.manager}</hi>
+        return `<div> <hi>${data[0].name}</hi>
         </div>
         <div>
-        <p>${data.id}</p>
-        <p>${data.email}</p>
+        <p>${data[0].id}</p>
+        <p>${data[0].email}</p>
         </div>`;
         // <h2>${data.getRole()}</h2>
         // <p>${data.getOffice()}</p>
