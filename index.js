@@ -1,6 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const pageTemplate = require('./src/page-template.js');
+const { teamCards, htmlStuff } = require('./src/page-template');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
@@ -15,26 +15,26 @@ function addManager() {
     {
         type: 'input',
         message: 'Please enter the name of the team manager',
-        name: 'name'
+        name: 'ManagerName'
     },
     {
         type: 'input',
         message: 'Please enter the ID of the manager',
-        name: 'id'
+        name: 'ManagerId'
     },
     {
         type: 'input',
         message: 'Please enter the email of the team manager',
-        name: 'email'
+        name: 'ManagerEmail'
     },
     {
         type: 'input',
         message: 'Please enter the office number of the manager',
-        name: 'office'
+        name: 'ManagerOffice'
     }
 ])  
 .then((data) => {
-    const newManager = new Manager(data.name, data.id, data.email, data.office)
+    const newManager = new Manager(data.ManagerName, data.ManagerId, data.ManagerEmail, data.ManagerOffice)
     teamMembers.push(newManager)
     chooseMember()
 })
@@ -72,26 +72,26 @@ function createEngineer () {
         {
             type: 'input',
             message: 'Please enter the name of the engineer',
-            name: 'name'
+            name: 'EngineerName'
         },
         {
             type: 'input',
             message: 'Please enter the ID of the engineer',
-            name: 'id'
+            name: 'EngineerId'
         },
         {
             type: 'input',
             message: 'Please enter the email of the engineer',
-            name: 'email'
+            name: 'EngineerEmail'
         },
         {
             type: 'input',
             message: 'Please enter their GitHub username',
-            name: 'github'
+            name: 'EngineerGithub'
         }
     ])
     .then((data) => {
-        const newEngineer = new Engineer(data.name, data.id, data.email, data.github)
+        const newEngineer = new Engineer(data.EngineerName, data.EngineerId, data.EngineerEemail, data.EngineerGithub)
         teamMembers.push(newEngineer)
         chooseMember()
     })
@@ -104,27 +104,27 @@ function createIntern(){
     {
         type: 'input',
         message: 'Please enter the name of the intern',
-        name: 'name'
+        name: 'InternName'
     },
     {
         type: 'input',
         message: 'Please enter the ID of the intern',
-        name: 'id'
+        name: 'InternId'
     },
     {
         type: 'input',
         message: 'Please enter the email of the intern',
-        name: 'email'
+        name: 'InternEmail'
     },
         {
         type: 'input',
         message: 'Please enter the name of the school you are attending',
-        name: 'school'
+        name: 'InternSchool'
         }
 
         ])
         .then((data) => {
-            const newIntern = new Intern(data.name, data.id, data.email, data.school)
+            const newIntern = new Intern(data.InternName, data.InternId, data.InternEmail, data.InternSchool)
             teamMembers.push(newIntern)
             chooseMember()
         }) 
@@ -133,12 +133,13 @@ function createIntern(){
 
 
 // function for writeFile
-function fileCreation(teamMembers){
-const contentTeam = pageTemplate.buildManager(teamMembers);
-pageTemplate.buildEngineer(teamMembers)
-pageTemplate.buildIntern(teamMembers)
+function fileCreation(){
+const contentTeam = teamCards(teamMembers);
+const page = htmlStuff();
+// pageTemplate.buildEngineer(teamMembers)
+// pageTemplate.buildIntern(teamMembers)
 
-    fs.writeFile('myTeam.html', contentTeam,
+    fs.writeFile('myTeam.html', contentTeam, page,
     (err) => err ? console.log(err) : console.log("myTeam.html file successfully created")
     );
   

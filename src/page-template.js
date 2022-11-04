@@ -1,45 +1,53 @@
-// const contentTeam = require("../src/page-template.js")
-// set up variable to generate team 
 
-// function pageTemplate(data){
-// // this function is similar to generateMarkdown
-//     return `${data.employee}`
-// }
-// const contentTeam
-const contentTeam = {
-
-
-    buildManager: (data) => {
-        return `<div> <hi>${data[0].name}</hi>
+function teamCards (data) {
+   if (data.employee === 'Engineer'){
+        return `<div> <hi>${data.EngineerName}</hi>
         </div>
         <div>
-        <p>${data[0].id}</p>
-        <p>${data[0].email}</p>
+        <p>${data.EngineerId}</p>
+        <p>${data.EngineerEmail}</p>
         </div>`;
-        // <h2>${data.getRole()}</h2>
-        // <p>${data.getOffice()}</p>
-    },
-    buildEngineer: (data) => {
-        return `<div> <hi>${data.manager}</hi>
-        </div>
-        <div>
-        <p>${data.id}</p>
-        <p>${data.email}</p>
-        </div>`
-        // <h2>${data.getRole()}</h2>
-        //  <p>${data.getGithub()}
-    },
-    buildIntern: (data) => {
-        return `<div> <hi>${data.manager}</hi>
-        </div>
-        <div>
-        <p>${data.id}</p>
-        <p>${data.email}</p>
-        </div>`
-        // <h2>${data.getRole()}</h2>
-        // <p>${data.getSchool()}
     }
+    else if (data.employee === 'Intern'){
+        return `<div> <hi>${data.InternName}</hi>
+        </div>
+        <div>
+        <p>${data.InternId}</p>
+        <p>${data.InternEmail}</p>
+        </div>`
+    }
+    else {
+        return ''
+    };
+};
+
+function htmlStuff() {
+    return `
+  <!DOCTYPE html> 
+  <html lang="en"> 
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Profile generator</title>
+    <link rel="stylesheet" href="./assets/style.css">
+  </head>
+  
+  <body>
+  </body>
+  </html>`;
 
 };
 
-module.exports = contentTeam 
+htmlStuff()
+
+module.exports = { teamCards, htmlStuff }
+
+// if (data.employee === 'Manager'){
+//     return `<div> 
+//     <hi>${data.ManagerName}</hi>
+//     </div>
+//     <div>
+//     <p>${data.ManagerId}</p>
+//     <p>${data.ManagerEmail}</p>
+//     </div>`;
