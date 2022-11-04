@@ -1,12 +1,13 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const { teamCards, htmlStuff } = require('./src/page-template');
+const { htmlStuff } = require('./src/pageTemplate');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 const Employee = require('./lib/Employee');
 
-const teamMembers = [];
+let teamMembers = [];
+
 
 function appMenu(){
 function addManager() {
@@ -134,12 +135,12 @@ function createIntern(){
 
 // function for writeFile
 function fileCreation(){
-const contentTeam = teamCards(teamMembers);
-const page = htmlStuff();
+const contentTeam = htmlStuff(teamMembers);
+// const page = htmlStuff();
 // pageTemplate.buildEngineer(teamMembers)
 // pageTemplate.buildIntern(teamMembers)
 
-    fs.writeFile('myTeam.html', contentTeam, page,
+    fs.writeFile('myTeam.html', contentTeam,
     (err) => err ? console.log(err) : console.log("myTeam.html file successfully created")
     );
   
@@ -148,3 +149,5 @@ const page = htmlStuff();
 addManager() };
 
 appMenu()
+
+module.exports = teamMembers;
