@@ -1,58 +1,44 @@
 // create members array to pass into htmlStuff?
 // const members = []
-let teamMembers = [];
+// let teamMembers = [];
 
-const generateCards = (teamCards) => {
+const generateCards = (teamMembers)=> {
 
     for(i=0; i < teamMembers.length; i++) {
+            // console.log(teamMembers[i].getRole())
          if (teamMembers[i].getRole() === 'Manager') {
-             const managerCard = 
-             teamMembers.push(managerCard);
+            // console.log("manager")
+            return `<div> 
+            <h1>${teamMembers[i].name}</h1>
+            </div>
+            <div>
+            <p>${teamMembers[i].id}</p>
+            <p>${teamMembers[i].email}</p>
+            </div>`
          }
          if (teamMembers[i].getRole() === 'Engineer') {
-             const engineerCard =
-             teamMembers.push(engineerCard);
+            return `<div> 
+            <h1>${teamMembers[i].name}</h1>
+            </div>
+            <div>
+            <p>${teamMembers[i].id}</p>
+            <p>${teamMembers[i].email}</p>
+            </div>`;
          }
          if (teamMembers[i].getRole() === 'Intern') {
-             const internCard = 
-             teamMembers.push(internCard);
-         };
+            return `<div>
+            <h1>${teamMembers[i].name}<h1>
+            <p>${teamMembers[i].id}</p>
+            <p>${teamMembers[i].email}</p>`
+        };
      
  }; 
-    if (teamMembers.employee === 'Manager'){
-        return `<div> 
-        <h1>${teamMembers.ManagerName}</h1>
-        </div>
-        <div>
-        <p>${teamMembers.ManagerId}</p>
-        <p>${teamMembers.ManagerEmail}</p>
-        </div>`
-    }
-  
-    if (teamMembers.employee === 'Engineer'){
-        return `<div> 
-        <h1>${teamMembers.EngineerName}</h1>
-        </div>
-        <div>
-        <p>${teamMembers.EngineerId}</p>
-        <p>${teamMembers.EngineerEmail}</p>
-        </div>`;
-    }
-    else if (teamMembers.employee === 'Intern'){
-        return `<div>
-        <h1>${teamMembers.InternName}<h1>
-        <p>${teamMembers.InternId}</p>
-        <p>${teamMembers.InternEmail}</p>`
-    }
-    else {
-        return ''
-    };
-   
+       
 };
 
 
 
-function htmlStuff (teamCards){
+function htmlStuff (teamMembers){
     return `
     <!DOCTYPE html> 
     <html lang="en"> 
@@ -69,13 +55,13 @@ function htmlStuff (teamCards){
     <div class= "card">
     <div class="container-fluid">
     <div class="row d-flex justify-content-around">
-    ${generateCards(teamCards)}
+    ${generateCards(teamMembers)}
     </div>
     </div>
     </body>
     </html>`;
 }
-htmlStuff()
+
 
 
 

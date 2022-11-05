@@ -135,6 +135,7 @@ function createIntern(){
 
 // function for writeFile
 function fileCreation(){
+    console.log(teamMembers)
 const contentTeam = htmlStuff(teamMembers);
 // const page = htmlStuff();
 // pageTemplate.buildEngineer(teamMembers)
