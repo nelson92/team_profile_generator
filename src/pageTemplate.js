@@ -2,7 +2,7 @@
 // const members = []
 let teamMembers = [];
 
-const teamCards = () => {
+const generateCards = (teamCards) => {
 
     if (teamMembers.employee === 'Manager'){
         return `<div> 
@@ -32,10 +32,10 @@ const teamCards = () => {
     else {
         return ''
     };
-
+   
 };
 
-teamCards();
+
 
 function htmlStuff (teamCards){
     return `
@@ -54,7 +54,7 @@ function htmlStuff (teamCards){
     <div class= "card">
     <div class="container-fluid">
     <div class="row d-flex justify-content-around">
-    ${teamCards}
+    ${generateCards(teamCards)}
     </div>
     </div>
     </body>
