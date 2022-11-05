@@ -32,6 +32,25 @@ const generateCards = (teamCards) => {
     else {
         return ''
     };
+
+    let newVar = function newFunction(teamCards) {
+           for(i=0; i < teamMembers.length; i++) {
+            if (teamMembers[i].getRole() === 'Manager') {
+                const managerCard = 
+                teamMembers.push(managerCard);
+            }
+            if (teamMembers[i].getRole() === 'Engineer') {
+                const engineerCard =
+                teamMembers.push(engineerCard);
+            }
+            if (teamMembers[i].getRole() === 'Intern') {
+                const internCard = 
+                teamMembers.push(internCard);
+            }
+        }
+
+    }; 
+
    
 };
 
