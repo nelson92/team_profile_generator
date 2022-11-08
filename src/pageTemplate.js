@@ -8,30 +8,39 @@ const generateCards = (teamMembers)=> {
             // console.log(teamMembers[i].getRole())
          if (teamMembers[i].getRole() === 'Manager') {
             // console.log("manager")
-            return `<div> 
+            `<div> 
             <h1>${teamMembers[i].name}</h1>
             </div>
             <div>
             <p>${teamMembers[i].id}</p>
+            </div>
+            <div>
             <p>${teamMembers[i].email}</p>
             </div>`
          }
          if (teamMembers[i].getRole() === 'Engineer') {
-            return `<div> 
+            `<div> 
             <h1>${teamMembers[i].name}</h1>
             </div>
             <div>
             <p>${teamMembers[i].id}</p>
+            </div>
+            <div>
             <p>${teamMembers[i].email}</p>
             </div>`;
          }
          if (teamMembers[i].getRole() === 'Intern') {
-            return `<div>
-            <h1>${teamMembers[i].name}<h1>
+            `<div>
+            <h1>${teamMembers[i].name}</h1>
+            </div>
+            <div>
             <p>${teamMembers[i].id}</p>
-            <p>${teamMembers[i].email}</p>`
+            </div>
+            <div>
+            <p>${teamMembers[i].email}</p>
+            </div>`
         };
-     
+    //  return ('Manager' + 'Engineer' + 'Intern')
  }; 
        
 };
@@ -50,7 +59,7 @@ function htmlStuff (teamMembers){
       <link rel="stylesheet" href="./dist/style.css">
     </head>
     <body>
-    <header class= "col-12 jumbotron mb-3 text-bg-primary p-3"> <h1> My Team </h1>
+    <header class= "jumbotron mb-3"> <h1> My Team </h1>
     </header>
     <div class= "card">
     <div class="container-fluid">
