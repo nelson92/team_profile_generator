@@ -24,31 +24,31 @@ const generateCards = (teamMembers) => {
             </div>`
          }
          if (teamMembers[i].getRole() === 'Engineer') {
-            string = `<div> 
-            <h1>${teamMembers[i].name}</h1>
+            string = `<div class="card"> 
+            <div class="container">
+            <h2><b>${teamMembers[i].name}</b></h2>
             </div>
-            <div>
             <p>${teamMembers[i].id}</p>
-            </div>
             <div>
             <p>${teamMembers[i].email}</p>
             </div>
             <div>
             <p>${teamMembers[i].github}</p>
+            </div>
             </div>`;
          }
          if (teamMembers[i].getRole() === 'Intern') {
-            string = `<div>
-            <h1>${teamMembers[i].name}</h1>
+            string = `<div class="card"> 
+            <div class="container">
+            <h2><b>${teamMembers[i].name}</b></h2>
             </div>
-            <div>
             <p>${teamMembers[i].id}</p>
-            </div>
             <div>
             <p>${teamMembers[i].email}</p>
             </div>
             <div>
             <p>${teamMembers[i].school}</p>
+            </div>
             </div>`
         };
         
@@ -68,13 +68,13 @@ function htmlStuff (teamMembers){
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <title>Profile generator</title>
-      <link rel="stylesheet" href="./dist/style.css">
+      <link rel="stylesheet" href="./dist/style.css"/>
     </head>
-    <body>
-    <div class= "banner"> <h1> My Team </h1>
-    </div>
-    <div class="row">
+
+    <body class="card">
+    <header> <div> <h1> My Team </h1></div>
+    </header>
+    <div class="container">
     ${generateCards(teamMembers)}
     </div>
     </body>
