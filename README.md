@@ -3,7 +3,8 @@
 # Description
 This application runs by using the node index.js command in the terminal and will produce a unique HTML file that contains team employee cards with data input by the user. It uses Jest for all testing purposes and the Inquirer 8.2.4 package.
 
-Screencastify link to a video walkthrough of this application: https://app.castify.com/watch/72e8eaa3-f178-446b-b2b0-6bfffb98137a
+Screencastify link to a video walkthrough of this application: https://drive.google.com/file/d/1Jz5W0tTShIrfzo6SkILuOoEZC1VSD5YQ/view?usp=sharing
+
 
 
 ## Table of Contents   
